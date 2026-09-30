@@ -1,0 +1,29 @@
+1.8.16
+- New sites: KhmerAvenue.net (Rumble, up to 1080p), TheKomsan (Ckh7's new
+  home; 720p MP4 / OK.ru), Movie-Khmer, Khmer Komsan (both OK.ru)
+- All four added to the main Search
+- Rumble embeds and TinyURL short links now play
+- Shared episode-list parser (resources/lib/sitekit.py)
+
+1.8.15
+- Video4Khmer is back: rewritten for its new site video4khmer.cam
+  (old video4khmer36.com is a parked domain). Categories, paging,
+  search, OK.ru / Facebook / UGREEN episode links
+- Facebook video links now go through ResolveURL
+
+
+
+1.8.14
+- Removed dead sources: Ckh7 (site moved), FlixHQ and LookMovie (relay down / domain gone)
+
+1.8.13
+- Fixed crash when a site is slow or down (undefined ADDON_ID)
+- Restored missing episode-list parsers (Sunday/Ckh7 style pages)
+- Fixed LookMovie and FlixHQ search crashes
+- Fixed FlixHQ search menu pointing to a missing function
+- Replaced deprecated ListItem.setInfo (Kodi 20+ InfoTagVideo)
+- Always close directory listings; friendly message on site errors
+- Fixed invalid XML declaration in addon.xml
+
+0.1
+- Intial release

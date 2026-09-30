@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+    
+<settings>
+  <category label="Khmer Dubbed">
+    <setting id="show_support_popup" type="bool" label="Show support popup on launch" default="true"/>
+    <setting id="summary_url" type="text" label="summary_url" default="" visible="false"/>
+    <setting id="about_url" type="text" label="about_url" default="" visible="false"/>
+  </category>
+</settings>

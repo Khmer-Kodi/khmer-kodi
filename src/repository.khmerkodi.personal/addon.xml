@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.khmerkodi.personal" name="Khmer Kodi (personal) Repository" version="1.0.0" provider-name="Khmer-kodi">
+  <extension point="xbmc.addon.repository" name="Khmer Kodi (personal) Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/Khmer-kodi/khmer-kodi/main/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/Khmer-kodi/khmer-kodi/main/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/Khmer-kodi/khmer-kodi/main/zips/</datadir>
+    </dir>
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Fixed Khmer Dubbed add-on with automatic updates</summary>
+    <description>Personal repository for the maintained Khmer Dubbed add-on. Also provides ResolveURL.</description>
+    <platform>all</platform>
+    <assets><icon>icon.png</icon></assets>
+  </extension>
+</addon>
