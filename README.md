@@ -13,3 +13,8 @@ After that, Kodi updates Khmer Dubbed automatically whenever a newer version is 
 1. Edit the add-on under `src/plugin.video.KDubbed/` and bump `version` in its `addon.xml`.
 2. `python3 build_repo.py <owner> <repo>`
 3. Commit and push. Kodi checks repositories roughly once a day (or on start-up).
+
+## Tests
+`bash tests/run_tests.sh` runs 40 checks in a simulated Kodi, with no network. The test pages in
+`tests/fixtures*` are real pages captured from each site. A fix is only published when all of them
+pass. When a site changes, capture a fresh sample page into `tests/fixtures/` and add a case for it.
