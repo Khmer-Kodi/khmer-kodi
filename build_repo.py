@@ -81,3 +81,25 @@ open(os.path.join(ROOT, "addons.xml"), "wb").write(data)
 open(os.path.join(ROOT, "addons.xml.md5"), "w").write(hashlib.md5(data).hexdigest())
 ET.fromstring(data)  # sanity check
 print("addons.xml ok, md5", hashlib.md5(data).hexdigest())
+
+
+# 4. Plain HTML file lists so Kodi's File Manager can browse this repo as a
+#    "source" when served by GitHub Pages (https://<owner>.github.io/<repo>/).
+def write_index(folder, entries):
+    links = "\n".join(f'<a href="{e}">{e}</a><br>' for e in entries)
+    with open(os.path.join(folder, "index.html"), "w", encoding="utf-8") as f:
+        f.write(f"<html><head><title>Index</title></head><body>\n{links}\n</body></html>\n")
+
+repo_zip = f"{REPO_ID}-{REPO_VERSION}.zip"
+shutil.copy(os.path.join(ZIPS, REPO_ID, repo_zip), os.path.join(ROOT, repo_zip))
+for old in os.listdir(ROOT):  # drop older root copies of the repository zip
+    if old.startswith(REPO_ID) and old.endswith(".zip") and old != repo_zip:
+        os.remove(os.path.join(ROOT, old))
+write_index(ROOT, [repo_zip, "zips/"])
+write_index(ZIPS, sorted(d + "/" for d in os.listdir(ZIPS) if os.path.isdir(os.path.join(ZIPS, d))))
+for d in os.listdir(ZIPS):
+    full = os.path.join(ZIPS, d)
+    if os.path.isdir(full):
+        write_index(full, sorted(f for f in os.listdir(full) if f.endswith(".zip")))
+open(os.path.join(ROOT, ".nojekyll"), "w").close()
+print("index.html files written for GitHub Pages")
