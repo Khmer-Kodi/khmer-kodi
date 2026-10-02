@@ -64,6 +64,8 @@ video_hosting|https://rumble.com/embed/v7d4mwk|urlmap
 video_hosting|https://tinyurl.com/8883scjb|urlmap
 menu_youtube|youtube|none
 youtube_channel|UCAbHU5C61UNjwPV8MF5b2Bg|none
+youtube_channel|UCd6StwIVjo8Zu4M4JAAFiSQ|none
+youtube_channel|UCd6StwIVjo8Zu4M4JAAFiSQ|no_youtube
 menu_youtube|youtube|no_youtube
 CASES
 echo "PASS=$pass FAIL=$fail"

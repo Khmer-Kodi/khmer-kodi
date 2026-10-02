@@ -129,9 +129,10 @@ def HOME():
             ]
         },
         {
-            "title": "YouTube • TVB Cambodia Drama",
+            "title": "YouTube • TVB Cambodia • Hang Meas",
             "categories": [
-                ("TVB Cambodia Drama (YouTube)", "youtube", "", "menu_youtube")
+                ("TVB Cambodia Drama (YouTube)", "UCAbHU5C61UNjwPV8MF5b2Bg", "", "youtube_channel"),
+                ("Hang Meas Khmer Drama (YouTube)", "UCd6StwIVjo8Zu4M4JAAFiSQ", "", "youtube_channel")
             ]
         }       
         #{

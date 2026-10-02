@@ -1,3 +1,6 @@
+1.8.19
+- New: Hang Meas Khmer Drama YouTube channel; each YouTube channel now has its own menu entry
+
 1.8.18
 - Khmer Live TV fixed: channel list now comes from this repository (livetv.json,
   with a bundled fallback). Removed 26 channels on the dead dodge.eu5.org relay

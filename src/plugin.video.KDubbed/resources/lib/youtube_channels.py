@@ -11,6 +11,7 @@ YT = f"plugin://{YOUTUBE_ADDON}"
 # (display name, YouTube channel ID "UC...")
 CHANNELS = [
     ("TVB Cambodia Drama", "UCAbHU5C61UNjwPV8MF5b2Bg"),   # youtube.com/@TVB_Cambodia
+    ("Hang Meas Khmer Drama", "UCd6StwIVjo8Zu4M4JAAFiSQ"),  # youtube.com/@HangMeasKhmerDramaOfficial
 ]
 
 
