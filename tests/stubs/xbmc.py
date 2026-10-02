@@ -13,3 +13,8 @@ def getCondVisibility(cond):
     if cond.startswith("System.HasAddon("):
         return _os.environ.get("YT_INSTALLED", "1") == "1"
     return False
+_orig_gcv = getCondVisibility
+def getCondVisibility(cond):
+    if cond.startswith("System.AddonIsEnabled("):
+        return _os.environ.get("ISA_ENABLED", "0") == "1"
+    return _orig_gcv(cond)

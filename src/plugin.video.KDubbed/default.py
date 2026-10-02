@@ -25,6 +25,7 @@ from resources.lib import (
     thekomsan,
     khmeravenue_net,
     youtube_channels,
+    livetv,
 )
 
 from resources.lib.handlers_blogid import (
@@ -359,7 +360,8 @@ ROUTES = {
     "playloop":            lambda: Playloop(url),
     "video_hosting":       lambda: VIDEO_HOSTING(url),
     "videolinks":          lambda: VIDEOLINKS(url),
-    "khmer_livetv":        lambda: KHMER_LIVETV(),
+    "khmer_livetv":        lambda: livetv.MENU(),
+    "play_livetv":         lambda: livetv.PLAY(url, name),
     "search":              lambda: SEARCH(),
 
     # ── iDrama Site (Tvsabay / OneLegend) ─────────────

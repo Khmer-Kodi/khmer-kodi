@@ -23,6 +23,10 @@ search||neterror
 search||v4listing
 search||kan_listing
 khmer_livetv||neterror
+khmer_livetv||urlmap
+play_livetv|https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8|none
+play_livetv|https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8|isa_on
+play_livetv|http://live.happywatch99.com/livehd10/x.sdp/playlist.m3u8|none
 index_vip|https://phumikhmer.vip/|neterror
 index_sunday|https://www.sundaydrama.com/|neterror
 index_idrama|https://www.idramahd.com/|neterror

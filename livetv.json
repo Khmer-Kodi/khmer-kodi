@@ -1,0 +1,156 @@
+{
+ "updated": "2026-10-01",
+ "note": "Khmer Live TV channel list for plugin.video.KDubbed. Maintained by the weekly check. status ok = verified, untested = plain-http stream not testable from the check browser.",
+ "channels": [
+  {
+   "name": "Apsara",
+   "url": "https://es2-p1-netcdn.metfone.com.kh/netcdn-live-6/app/stream/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "Bayon",
+   "url": "https://live-evg2.tv360.metfone.com.kh/livebayontv/bayontvhd.stream/chunklist_w784583499.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "BTV News",
+   "url": "https://live-evg2.tv360.metfone.com.kh/livetest/bayontest.stream/chunklist_w481528737.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "CambodiaTV",
+   "url": "https://live.happywatch99.com/livehd1/302356ddce1d515a64045e9721c735aa.sdp/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "Dmusic",
+   "url": "https://cdn.happywatch99.com/mp4/2024/STPM/STPM_17.mp4/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "KhmerTV",
+   "url": "https://livefta.malimarcdn.com/ftaedge00/khmertv2020.stream/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "Netlink",
+   "url": "https://netlink.netlinkbroadcaster.com/hls/test.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "Sea TV HD",
+   "url": "https://seatv.netlinkbroadcaster.com/hls/test.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "TV5",
+   "url": "https://es1-p1-netcdn.metfone.com.kh/netcdn-live-36/36/output/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "TVK",
+   "url": "https://live.kh.malimarcdn.com/live/tvk.stream/chunklist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "TVK2",
+   "url": "https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "Wiki TV",
+   "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+   "status": "ok"
+  },
+  {
+   "name": "ABC",
+   "url": "http://217.15.167.95:5080/live/streams/live_2.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "CnA TV",
+   "url": "http://live.happywatch99.com/livehd2/486b48ad9aefcc41bf2e5234d0269c40.sdp/chunks.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "CNC",
+   "url": "http://live.happywatch99.com/livehd12/ade9370aadadedbee81fa5e0f228bd37.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "CTN",
+   "url": "http://live.happywatch99.com/livehd10/02587745dbd71d978954203d7ec78497.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "CTV8 HD",
+   "url": "http://live.happywatch99.com/livehd17/60b8e758d3dac2865fa0cd868d0f7ec4.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "FRESH NEWS",
+   "url": "http://streaming-android.freshnewsasia.tv:1935/live/ngrp:myStream_all/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "Hang Meas HDTV",
+   "url": "http://clive.malisresidences.com:1935/hm_hdtv/smil:HMHDTV.smil/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "Hang Meas Now",
+   "url": "http://live.happywatch99.com/livehd19/ee1473c7d47863ed1c0392c42332be9a.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "Komsan",
+   "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "MoITV",
+   "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "MSJTV",
+   "url": "https://live-ali7.tv360.metfone.com.kh/live/myStream/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "MYTV",
+   "url": "http://live.happywatch99.com/livehd11/90ecf35382a7597e553200692c3fc384.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "PP Digital TV",
+   "url": "http://live.happywatch99.com/livehd3/f9527f8b5631c605187be673ce3f2f75.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "Rasmey Hang Meas HDTV",
+   "url": "http://clive.malisresidences.com:1935/rhm_hdtv/smil:RHMHDTV.smil/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "SHS TV",
+   "url": "http://live.happywatch99.com/livehd/f6beab30bfe7f8cbeba5075377fb95ea.sdp/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "TV3",
+   "url": "http://206.189.93.160:1935/live/myStream_720p/playlist.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "TV9",
+   "url": "http://43.245.219.190:8183/CTV9HD@1.m3u8",
+   "status": "untested"
+  },
+  {
+   "name": "TVB",
+   "url": "http://43.252.18.195:5080/LiveApp/streams/tvbhd.m3u8",
+   "status": "untested"
+  }
+ ]
+}

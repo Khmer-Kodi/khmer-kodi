@@ -1,3 +1,10 @@
+1.8.18
+- Khmer Live TV fixed: channel list now comes from this repository (livetv.json,
+  with a bundled fallback). Removed 26 channels on the dead dodge.eu5.org relay
+  and 3 dead streams (ETV, PNN, Tea TV); 30 channels remain
+- Live TV playback no longer requires InputStream Adaptive (used only if enabled);
+  the Metfone referer is sent only to Metfone servers
+
 1.8.17
 - New: TVB Cambodia Drama YouTube channel (playlists + latest videos),
   played through Kodi's official YouTube add-on (offered for install if missing)

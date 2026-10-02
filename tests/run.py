@@ -2,6 +2,7 @@ import sys, os, runpy, types, requests, importlib
 HERE=os.path.dirname(os.path.abspath(__file__))
 addon_dir, action, url, scenario = sys.argv[1:5]
 if scenario=="no_youtube": os.environ["YT_INSTALLED"]="0"
+if scenario=="isa_on": os.environ["ISA_ENABLED"]="1"
 sys.path[:0]=[os.path.join(HERE,"stubs"), addon_dir]; os.environ["ADDON_DIR"]=addon_dir
 PAGES = {
  "tk_eps_okru":open(os.path.join(HERE,"fixtures","tk_eps_okru.html")).read(),
@@ -23,7 +24,7 @@ class R:
     def __init__(s,t,c=200): s.text,s.content,s.status_code,s.url=t,t.encode(),c,"u"
     def raise_for_status(s): pass
 FX2=os.path.join(HERE,"fixtures")+"/"
-URLMAP=[("rumble.com/embedJS",FX2+"rumble_api.json"),("feeds/posts/default",FX2+"tk_feed.json")]
+URLMAP=[("livetv.json",FX2+"livetv.json"),("rumble.com/embedJS",FX2+"rumble_api.json"),("feeds/posts/default",FX2+"tk_feed.json")]
 def fake_get(self,u,**k):
     if scenario=="urlmap":
         for key,f in URLMAP:
@@ -41,6 +42,7 @@ try:
     runpy.run_path(os.path.join(addon_dir,os.environ.get("ENTRY","ADDON.py")), run_name="__main__"); status="OK"
 except Exception as e: status=f"CRASH {type(e).__name__}: {e}"
 import os as _o
+if _o.environ.get("VERBOSE") and getattr(xbmcplugin,"RESOLVED_PROPS",None): print("    props:",xbmcplugin.RESOLVED_PROPS[0])
 if _o.environ.get("VERBOSE"):
     import urllib.parse as up
     for l,u,f in xbmcplugin.ITEMS: q=dict(up.parse_qsl(u.split("?",1)[1])) if "?" in u else {"action":"(link)","url":u}; print("   ",l,"|",q.get("action"),"|",q.get("url","")[:95],"|",q.get("icon","")[:70])
