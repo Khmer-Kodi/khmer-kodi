@@ -72,6 +72,9 @@ youtube_channel|UCp49cPgy5z2eTvE-kxtchrg|none
 youtube_channel|UC8b-bkP65mcy4wMFEw3eirw|none
 youtube_channel|UCBs6AxeDIx8Wszd1vyZPOwQ|none
 youtube_channel|UC907FcRL5pZOOB9wC4iBY9Q|none
+youtube_channel|UC8tChlFiWfT5sJ0egXYvZew|none
+youtube_channel|UCgRs-wjr54W4IjhRRQ99Arw|none
+youtube_channel|UC7cyr5kbcN7jvG7No6lZ-wQ|none
 youtube_channel|UCGB9NdhFPeFhH9SxtcTOHXw|none
 menu_youtube|youtube|no_youtube
 CASES

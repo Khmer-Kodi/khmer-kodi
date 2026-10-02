@@ -20,6 +20,9 @@ CHANNELS = [
     ("PPCTV", "UCBs6AxeDIx8Wszd1vyZPOwQ"),                  # youtube.com/@ppctvmedia
     ("CTV8 HD+", "UC907FcRL5pZOOB9wC4iBY9Q"),               # youtube.com/@CTV8HDPlus
     ("Huace Croton TV Cambodia", "UCGB9NdhFPeFhH9SxtcTOHXw"),  # youtube.com/@huacetvcambodia
+    ("Prom Chau", "UC8tChlFiWfT5sJ0egXYvZew"),              # youtube.com/@promchau
+    ("Sastra Film", "UCgRs-wjr54W4IjhRRQ99Arw"),            # youtube.com/@SastraFilmKH
+    ("CTN TV", "UC7cyr5kbcN7jvG7No6lZ-wQ"),                 # youtube.com/@ctntvcambodia
 ]
 
 
