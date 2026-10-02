@@ -129,12 +129,14 @@ def HOME():
             ]
         },
         {
-            "title": "YouTube • TVB Cambodia • Hang Meas",
+            "title": "YouTube • TVB Cambodia • Hang Meas • Cambodian Idol",
             "categories": [
                 ("TVB Cambodia Drama (YouTube)", "UCAbHU5C61UNjwPV8MF5b2Bg", "", "youtube_channel"),
+                ("TVB Cambodia - Romance & Comedy (YouTube)", "UCp49cPgy5z2eTvE-kxtchrg", "", "youtube_channel"),
                 ("Hang Meas Khmer Drama (YouTube)", "UCd6StwIVjo8Zu4M4JAAFiSQ", "", "youtube_channel"),
                 ("Hang Meas HDTV (YouTube)", "UCm1syRy-B1uAkeecQS_2I3w", "", "youtube_channel"),
-                ("Rasmey Hang Meas - Music (YouTube)", "UCHwYHdX37UUt6d9e1wAp9Bw", "", "youtube_channel")
+                ("Rasmey Hang Meas - Music (YouTube)", "UCHwYHdX37UUt6d9e1wAp9Bw", "", "youtube_channel"),
+                ("Cambodian Idol (YouTube)", "UC8b-bkP65mcy4wMFEw3eirw", "", "youtube_channel")
             ]
         }       
         #{

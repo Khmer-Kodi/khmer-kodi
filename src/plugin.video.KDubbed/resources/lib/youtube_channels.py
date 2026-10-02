@@ -14,6 +14,8 @@ CHANNELS = [
     ("Hang Meas Khmer Drama", "UCd6StwIVjo8Zu4M4JAAFiSQ"),  # youtube.com/@HangMeasKhmerDramaOfficial
     ("Hang Meas HDTV", "UCm1syRy-B1uAkeecQS_2I3w"),         # youtube.com/@HMHDTV-Official
     ("Rasmey Hang Meas", "UCHwYHdX37UUt6d9e1wAp9Bw"),       # youtube.com/@HangMeasVideos (music)
+    ("TVB Cambodia - Romance & Comedy", "UCp49cPgy5z2eTvE-kxtchrg"),  # youtube.com/@TVBCambodia-RomanceComedy
+    ("Cambodian Idol", "UC8b-bkP65mcy4wMFEw3eirw"),         # youtube.com/@MyChannel-u7c
 ]
 
 
