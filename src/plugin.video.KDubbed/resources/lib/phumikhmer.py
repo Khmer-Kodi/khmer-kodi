@@ -17,6 +17,7 @@ from resources.lib.handlers_blogid import (
     extract_all_blogger_json_urls_from_page,
     parse_blogger_video_links,
 )
+from resources.lib.fonttext import clean_label
 try:
     ADDON_ID
 except NameError:
@@ -228,7 +229,7 @@ from resources.lib.handlers_playback import (
 #  BASIC DIRECTORY HELPERS
 # ────────────────────────────────────────────────
 def addDir(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     li.setArt({
         'thumb': iconimage,
         'icon': iconimage,
@@ -252,7 +253,7 @@ def addDir(name, url, action, iconimage=""):
     xbmcplugin.addDirectoryItem(handle=PLUGIN_HANDLE, url=u, listitem=li, isFolder=True)
 
 def addLink(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     li.setArt({
         'thumb': iconimage,
         'icon': iconimage,

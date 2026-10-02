@@ -14,6 +14,7 @@
 # ────────────────────────────────────────────────
 import re, json, requests, xbmc, xbmcgui, xbmcplugin
 from resources.lib import sitekit as kit
+from resources.lib.fonttext import clean_label
 
 YOUTUBE_ADDON = "plugin.video.youtube"
 PLAY_URL = f"plugin://{YOUTUBE_ADDON}/play/?video_id={{}}"
@@ -142,11 +143,12 @@ def _youtube_ready():
 
 
 def _add_video(item):
-    li = xbmcgui.ListItem(label=item["title"])
+    title = clean_label(item["title"])
+    li = xbmcgui.ListItem(label=title)
     li.setArt({"thumb": item["thumb"], "icon": item["thumb"], "poster": item["thumb"],
                "fanart": item["thumb"]})
     tag = li.getVideoInfoTag()
-    tag.setTitle(item["title"])
+    tag.setTitle(title)
     secs = _duration(item["badge"])
     if secs:
         tag.setDuration(secs)

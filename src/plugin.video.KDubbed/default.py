@@ -26,6 +26,7 @@ from resources.lib import (
     khmeravenue_net,
     youtube_channels,
     livetv,
+    khmer_font,
 )
 
 from resources.lib.handlers_blogid import (
@@ -49,6 +50,7 @@ from resources.lib.handlers_playback import (
 
 # ── Imports ────────────────────────────────────────────────
 from resources.lib.handlers_khmer import OpenURL as OpenURL_KH, OpenSoup as OpenSoup_KH
+from resources.lib.fonttext import clean_label
 
 # ── Global fallback (legacy Khmer default) ─────────────────
 OpenURL = OpenURL_KH
@@ -102,6 +104,7 @@ def GetInput(message, heading, is_hidden=False):
 
 # Main Menu
 def HOME():
+    khmer_font.ensure()   # once per font version: Khmer-capable font so titles are not boxes
     addDir("[COLOR yellow][B][I]SEARCH[/I][/B][/COLOR]", MERLKON, "search", ICON_SEARCH)
     addDir("Khmer Live TV", khmertv, "khmer_livetv", ICON_KHMERTV) 
 
@@ -160,6 +163,7 @@ def HOME():
             action = cat[3] if len(cat) > 3 else site.get('action', '')
             addDir(label, url, action, icon)
 
+    addDir("[COLOR grey]Install Khmer font (if titles show boxes)[/COLOR]", "", "khmer_font", "")
     xbmcplugin.endOfDirectory(PLUGIN_HANDLE)
 
 # Search function    
@@ -267,7 +271,7 @@ def KHMER_LIVETV():
                 xbmc.log(f"[{ADDON_ID}] Missing URL for: {title}", xbmc.LOGWARNING)
                 continue
 
-            li = xbmcgui.ListItem(label=title)
+            li = xbmcgui.ListItem(label=clean_label(title))
             li.setArt({'thumb': icon, 'icon': icon, 'poster': icon})
             li.getVideoInfoTag().setTitle(title)
             li.setProperty('IsPlayable', 'true' if resolve else 'false')
@@ -287,7 +291,7 @@ def KHMER_LIVETV():
 
 # ----- Utility Functions -----
 def addDir(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     li.setArt({
         'thumb': iconimage,
         'icon': iconimage,
@@ -311,7 +315,7 @@ def addDir(name, url, action, iconimage=""):
     xbmcplugin.addDirectoryItem(handle=PLUGIN_HANDLE, url=u, listitem=li, isFolder=True)
 
 def addLink(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     li.setArt({
         'thumb': iconimage,
         'icon': iconimage,
@@ -404,6 +408,7 @@ ROUTES = {
     "index_moviekhmer":        lambda: movie_khmer.INDEX(url),
     "episode_moviekhmer":      lambda: movie_khmer.EPISODES(url, icon),
     "menu_khmerkomsan":        lambda: khmerkomsan.MENU(),
+    "khmer_font":              lambda: (khmer_font.ensure(force=True), xbmcplugin.endOfDirectory(PLUGIN_HANDLE, succeeded=False)),
     "menu_youtube":            lambda: youtube_channels.MENU(),
     "youtube_channel":         lambda: youtube_channels.CHANNEL(url),
     "yt_playlists":            lambda: youtube_channels.PLAYLISTS(url),

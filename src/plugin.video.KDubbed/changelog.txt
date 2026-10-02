@@ -1,3 +1,7 @@
+1.8.27
+- Khmer font: installed automatically (Noto Sans + Noto Sans Khmer) so Khmer titles show instead of boxes; also "Install Khmer font" at the bottom of the main menu
+- Titles: emoji and Chinese-style brackets that Kodi cannot draw are cleaned up
+
 1.8.26
 - All menus and lists open in the Shift view (Estuary, the default Kodi skin)
 

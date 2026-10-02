@@ -6,6 +6,8 @@ set -u
 cd "$(dirname "$0")/.."
 D="$(pwd)/src/plugin.video.KDubbed"
 export ENTRY=default.py
+export KODI_HOME="$(mktemp -d)"   # fake Kodi home for the font installer
+pip install -q fonttools --break-system-packages >/dev/null 2>&1 || true
 pip install -q requests beautifulsoup4 pyflakes --break-system-packages >/dev/null 2>&1 || true
 find src -name __pycache__ -exec rm -rf {} + 2>/dev/null
 python3 -m py_compile $(find "$D" -name '*.py') || { echo "COMPILE FAILED"; exit 1; }

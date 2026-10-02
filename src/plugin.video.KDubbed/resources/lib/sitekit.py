@@ -8,6 +8,7 @@ from html import unescape as html_unescape
 
 from resources.lib.handlers_khmer import OpenURL as OpenURL_KH
 from resources.lib.handlers_blogid import ADDON_ID
+from resources.lib.fonttext import clean_label
 
 PLUGIN_HANDLE = int(sys.argv[1])
 
@@ -166,6 +167,7 @@ def _plugin_url(name, url, action, icon):
 
 
 def addDir(name, url, action, icon=""):
+    name = clean_label(name)   # no emoji/CJK brackets: they draw as boxes in Kodi
     li = xbmcgui.ListItem(label=name)
     _art(li, icon)
     li.getVideoInfoTag().setTitle(name)
@@ -174,6 +176,7 @@ def addDir(name, url, action, icon=""):
 
 
 def addLink(name, url, action, icon=""):
+    name = clean_label(name)   # no emoji/CJK brackets: they draw as boxes in Kodi
     li = xbmcgui.ListItem(label=name)
     _art(li, icon)
     li.setProperty("IsPlayable", "true")

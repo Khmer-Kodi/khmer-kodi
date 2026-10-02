@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 # ── Local Handlers ──────────────────────────────
 from resources.lib.handlers_khmer import OpenURL as OpenURL_KH
 from resources.lib.handlers_blogid import ADDON_ID
+from resources.lib.fonttext import clean_label
 
 # ── Site constants ──────────────────────────────
 VIDEO4KHMER = "https://video4khmer.cam/"
@@ -163,7 +164,7 @@ def _plugin_url(name, url, action, iconimage):
 
 
 def addDir(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     _art(li, iconimage)
     li.getVideoInfoTag().setTitle(name)
     xbmcplugin.addDirectoryItem(handle=PLUGIN_HANDLE, url=_plugin_url(name, url, action, iconimage),
@@ -171,7 +172,7 @@ def addDir(name, url, action, iconimage=""):
 
 
 def addLink(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     _art(li, iconimage)
     li.setProperty("IsPlayable", "true")
     li.getVideoInfoTag().setTitle(name)

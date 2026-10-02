@@ -62,5 +62,36 @@ for act, u, sc in (("home", "", "none"), ("yt_playlists", "UCAbHU5C61UNjwPV8MF5b
     check(f"Shift view on {act}", "Container.SetViewMode(53)" in v["builtins"] and v["content"][-1:] == ["videos"])
 check("no Shift id on other skins", "Container.SetViewMode(53)" not in view("home", "", "none", "skin.other")["builtins"])
 check("no view change when a list fails", "Container.SetViewMode(53)" not in view("yt_playlists", "UCAbHU5C61UNjwPV8MF5b2Bg", "neterror")["builtins"])
+
+# Khmer font: installed once into special://home/media/Fonts/arial.ttf and the Arial font set selected.
+import tempfile, hashlib
+FONT = os.path.join(ADDON, "resources", "fonts", "KhmerDubbedSans.ttf")
+md5 = lambda p: hashlib.md5(open(p, "rb").read()).hexdigest()
+def kodi(action, home, fontset="Default"):
+    env = dict(os.environ, ENTRY="default.py", DUMP="1", KODI_HOME=home, FONTSET=fontset)
+    out = subprocess.run([sys.executable, os.path.join(HERE, "run.py"), ADDON, action, "", "none"],
+                         capture_output=True, text=True, env=env).stdout
+    return json.loads(next(l[5:] for l in out.splitlines() if l.startswith("VIEW "))), out.strip().splitlines()[-1]
+from fontTools.ttLib import TTFont
+cm = TTFont(FONT).getBestCmap()
+check("font has Khmer + Latin", all(c in cm for c in range(0x1780, 0x17DD)) and all(c in cm for c in range(0x20, 0x7F)))
+home = tempfile.mkdtemp()
+dest = os.path.join(home, "home", "media", "Fonts", "arial.ttf")
+os.makedirs(os.path.dirname(dest)); open(dest, "wb").write(b"old user font")
+v, last = kodi("home", home)
+sets = [r for r in v["rpc"] if r["method"] == "Settings.SetSettingValue"]
+check("home installs font as arial.ttf", os.path.exists(dest) and md5(dest) == md5(FONT) and last.startswith("OK"))
+check("existing arial.ttf backed up", open(dest + ".bak", "rb").read() == b"old user font")
+check("Arial font set selected", sets and sets[0]["params"] == {"setting": "lookandfeel.font", "value": "Arial"})
+check("install notification", any("Khmer font installed" in str(d) for d in v["dialogs"]))
+v, _ = kodi("home", home, fontset="Default")
+check("second run changes nothing (user choice respected)", not [r for r in v["rpc"] if r["method"].startswith("Settings.")])
+v, _ = kodi("khmer_font", home, fontset="Arial")
+check("menu item re-run: already installed", any("already installed" in str(d) for d in v["dialogs"]))
+v, _ = kodi("khmer_font", home, fontset="Default")
+check("menu item re-selects Arial if user switched back", any(r["method"] == "Settings.SetSettingValue" for r in v["rpc"]))
+home2 = tempfile.mkdtemp()
+v, _ = kodi("home", home2, fontset="Arial")
+check("Arial already selected -> ReloadSkin to load the new file", "ReloadSkin()" in v["builtins"])
 print(f"YT_PASS={sum(results)} YT_FAIL={len(results) - sum(results)}")
 sys.exit(0 if all(results) else 1)

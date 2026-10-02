@@ -6,6 +6,7 @@
 import os, sys, json, xbmc, xbmcaddon, xbmcgui, xbmcplugin
 from urllib.parse import quote_plus, urlparse
 from resources.lib import sitekit as kit
+from resources.lib.fonttext import clean_label
 from resources.lib.handlers_khmer import OpenURL as OpenURL_KH
 
 LIST_URL = "https://raw.githubusercontent.com/Khmer-kodi/khmer-kodi/main/livetv.json"
@@ -49,7 +50,7 @@ def MENU():
         if not name or not url:
             continue
         logo = ch.get("logo") or icon
-        li = xbmcgui.ListItem(label=name)
+        li = xbmcgui.ListItem(label=clean_label(name))
         li.setArt({"thumb": logo, "icon": logo, "poster": logo})
         li.getVideoInfoTag().setTitle(name)
         li.setProperty("IsPlayable", "true")

@@ -17,6 +17,7 @@ from resources.lib.handlers_blogid import (
     parse_blogger_video_links,
     parse_blogger_video_links_script,
 )
+from resources.lib.fonttext import clean_label
 try:
     ADDON_ID
 except NameError:
@@ -645,7 +646,7 @@ def Play_VIDEO(VideoURL):
     
 # ── Basic UI Helpers (avoid circular import) ────────────
 def addDir(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     li.setArt({
         'thumb': iconimage,
         'icon': iconimage,
@@ -669,7 +670,7 @@ def addDir(name, url, action, iconimage=""):
     xbmcplugin.addDirectoryItem(handle=PLUGIN_HANDLE, url=u, listitem=li, isFolder=True)
 
 def addLink(name, url, action, iconimage=""):
-    li = xbmcgui.ListItem(label=name)
+    li = xbmcgui.ListItem(label=clean_label(name))
     li.setArt({
         'thumb': iconimage,
         'icon': iconimage,
