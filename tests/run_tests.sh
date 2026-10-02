@@ -66,6 +66,8 @@ menu_youtube|youtube|none
 youtube_channel|UCAbHU5C61UNjwPV8MF5b2Bg|none
 youtube_channel|UCd6StwIVjo8Zu4M4JAAFiSQ|none
 youtube_channel|UCd6StwIVjo8Zu4M4JAAFiSQ|no_youtube
+youtube_channel|UCm1syRy-B1uAkeecQS_2I3w|none
+youtube_channel|UCHwYHdX37UUt6d9e1wAp9Bw|none
 menu_youtube|youtube|no_youtube
 CASES
 echo "PASS=$pass FAIL=$fail"

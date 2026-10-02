@@ -12,6 +12,8 @@ YT = f"plugin://{YOUTUBE_ADDON}"
 CHANNELS = [
     ("TVB Cambodia Drama", "UCAbHU5C61UNjwPV8MF5b2Bg"),   # youtube.com/@TVB_Cambodia
     ("Hang Meas Khmer Drama", "UCd6StwIVjo8Zu4M4JAAFiSQ"),  # youtube.com/@HangMeasKhmerDramaOfficial
+    ("Hang Meas HDTV", "UCm1syRy-B1uAkeecQS_2I3w"),         # youtube.com/@HMHDTV-Official
+    ("Rasmey Hang Meas", "UCHwYHdX37UUt6d9e1wAp9Bw"),       # youtube.com/@HangMeasVideos (music)
 ]
 
 
@@ -52,6 +54,6 @@ def CHANNEL(channel_id):
     if not _youtube_ready():
         xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE, succeeded=False)
         return
-    _folder("Playlists (full dramas)", f"{YT}/channel/{channel_id}/playlists/")
+    _folder("Playlists", f"{YT}/channel/{channel_id}/playlists/")
     _folder("Latest videos", f"{YT}/channel/{channel_id}/")
     xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE)

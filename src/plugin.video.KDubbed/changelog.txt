@@ -1,3 +1,6 @@
+1.8.20
+- New YouTube channels: Hang Meas HDTV (TV shows), Rasmey Hang Meas (music)
+
 1.8.19
 - New: Hang Meas Khmer Drama YouTube channel; each YouTube channel now has its own menu entry
 

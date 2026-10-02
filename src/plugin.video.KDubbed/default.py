@@ -132,7 +132,9 @@ def HOME():
             "title": "YouTube • TVB Cambodia • Hang Meas",
             "categories": [
                 ("TVB Cambodia Drama (YouTube)", "UCAbHU5C61UNjwPV8MF5b2Bg", "", "youtube_channel"),
-                ("Hang Meas Khmer Drama (YouTube)", "UCd6StwIVjo8Zu4M4JAAFiSQ", "", "youtube_channel")
+                ("Hang Meas Khmer Drama (YouTube)", "UCd6StwIVjo8Zu4M4JAAFiSQ", "", "youtube_channel"),
+                ("Hang Meas HDTV (YouTube)", "UCm1syRy-B1uAkeecQS_2I3w", "", "youtube_channel"),
+                ("Rasmey Hang Meas - Music (YouTube)", "UCHwYHdX37UUt6d9e1wAp9Bw", "", "youtube_channel")
             ]
         }       
         #{
