@@ -1,3 +1,7 @@
+1.8.22
+- New YouTube channels: PPCTV, CTV8 HD+, Huace Croton TV Cambodia
+- YouTube menu is now built from youtube_channels.CHANNELS
+
 1.8.21
 - New YouTube channels: TVB Cambodia - Romance & Comedy, Cambodian Idol
 

@@ -1,6 +1,7 @@
 # ────────────────────────────────────────────────
 #  YOUTUBE CHANNELS (played through Kodi's official YouTube add-on)
-#  To add a channel: append (name, channel_id) to CHANNELS.
+#  To add a channel: append (name, channel_id) to CHANNELS. The main menu is built
+#  from this list automatically.
 # ────────────────────────────────────────────────
 import xbmc, xbmcgui, xbmcplugin
 from resources.lib import sitekit as kit
@@ -16,6 +17,9 @@ CHANNELS = [
     ("Rasmey Hang Meas", "UCHwYHdX37UUt6d9e1wAp9Bw"),       # youtube.com/@HangMeasVideos (music)
     ("TVB Cambodia - Romance & Comedy", "UCp49cPgy5z2eTvE-kxtchrg"),  # youtube.com/@TVBCambodia-RomanceComedy
     ("Cambodian Idol", "UC8b-bkP65mcy4wMFEw3eirw"),         # youtube.com/@MyChannel-u7c
+    ("PPCTV", "UCBs6AxeDIx8Wszd1vyZPOwQ"),                  # youtube.com/@ppctvmedia
+    ("CTV8 HD+", "UC907FcRL5pZOOB9wC4iBY9Q"),               # youtube.com/@CTV8HDPlus
+    ("Huace Croton TV Cambodia", "UCGB9NdhFPeFhH9SxtcTOHXw"),  # youtube.com/@huacetvcambodia
 ]
 
 

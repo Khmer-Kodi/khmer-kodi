@@ -70,6 +70,9 @@ youtube_channel|UCm1syRy-B1uAkeecQS_2I3w|none
 youtube_channel|UCHwYHdX37UUt6d9e1wAp9Bw|none
 youtube_channel|UCp49cPgy5z2eTvE-kxtchrg|none
 youtube_channel|UC8b-bkP65mcy4wMFEw3eirw|none
+youtube_channel|UCBs6AxeDIx8Wszd1vyZPOwQ|none
+youtube_channel|UC907FcRL5pZOOB9wC4iBY9Q|none
+youtube_channel|UCGB9NdhFPeFhH9SxtcTOHXw|none
 menu_youtube|youtube|no_youtube
 CASES
 echo "PASS=$pass FAIL=$fail"
