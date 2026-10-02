@@ -1,7 +1,7 @@
 # ────────────────────────────────────────────────
 #  YOUTUBE CHANNELS (played through Kodi's official YouTube add-on)
-#  To add a channel: append (name, channel_id) to CHANNELS. The main menu is built
-#  from this list automatically.
+#  To add a channel: append (name, channel_id) to CHANNELS. The single
+#  "YouTube Channels" menu entry lists them all automatically.
 # ────────────────────────────────────────────────
 import xbmc, xbmcgui, xbmcplugin
 from resources.lib import sitekit as kit
@@ -52,8 +52,6 @@ def MENU():
     if not _youtube_ready():
         xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE, succeeded=False)
         return
-    if len(CHANNELS) == 1:
-        return CHANNEL(CHANNELS[0][1])
     for name, cid in CHANNELS:
         kit.addDir(name, cid, "youtube_channel", "")
     xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE)

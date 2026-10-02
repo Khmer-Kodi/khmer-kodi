@@ -1,3 +1,6 @@
+1.8.24
+- All YouTube channels combined under one "YouTube Channels" menu entry
+
 1.8.23
 - New YouTube channels: Prom Chau, Sastra Film, CTN TV
 

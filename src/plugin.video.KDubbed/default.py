@@ -129,10 +129,9 @@ def HOME():
             ]
         },
         {
-            "title": "YouTube Channels",
+            "title": "YouTube",
             "categories": [
-                (f"{name} (YouTube)", cid, "", "youtube_channel")
-                for name, cid in youtube_channels.CHANNELS
+                (f"YouTube Channels ({len(youtube_channels.CHANNELS)})", "youtube", "", "menu_youtube")
             ]
         }       
         #{
