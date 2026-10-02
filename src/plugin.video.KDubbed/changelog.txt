@@ -1,3 +1,6 @@
+1.8.26
+- All menus and lists open in the Shift view (Estuary, the default Kodi skin)
+
 1.8.25
 - YouTube fixed: playlists and videos now load without YouTube API keys (the YouTube add-on is only used to play)
 

@@ -5,7 +5,8 @@ def addDirectoryItem(handle=None,url=None,listitem=None,isFolder=False,*a):
 def endOfDirectory(h,*a,**k): ENDS.append(h)
 RESOLVED_PROPS=[]
 def setResolvedUrl(h,ok,item): RESOLVED.append(item.path); RESOLVED_PROPS.append(dict(item.props))
-def setContent(*a,**k): pass
+CONTENT=[]
+def setContent(h,c,*a,**k): CONTENT.append(c)
 def addSortMethod(*a,**k): pass
 def setPluginCategory(*a,**k): pass
 def addDirectoryItems(h,items,*a):

@@ -424,7 +424,20 @@ ROUTES = {
 # ----- Execute Action -----
 _DONE = []
 _orig_end, _orig_res = xbmcplugin.endOfDirectory, xbmcplugin.setResolvedUrl
-def _end(*a, **k): _DONE.append(1); return _orig_end(*a, **k)
+VIEW_SHIFT = 53   # Estuary's "Shift" view (Kodi 21). It is offered only for video-type content.
+def _end(*a, **k):
+    _DONE.append(1)
+    ok = k.get("succeeded", a[1] if len(a) > 1 else True)
+    if ok:
+        xbmcplugin.setContent(PLUGIN_HANDLE, "videos")
+    r = _orig_end(*a, **k)
+    if ok:
+        try:
+            if xbmc.getSkinDir() == "skin.estuary":
+                xbmc.executebuiltin(f"Container.SetViewMode({VIEW_SHIFT})")
+        except Exception as e:
+            xbmc.log(f"[plugin.video.KDubbed] Could not set the view: {e}", xbmc.LOGWARNING)
+    return r
 def _res(*a, **k): _DONE.append(1); return _orig_res(*a, **k)
 xbmcplugin.endOfDirectory, xbmcplugin.setResolvedUrl = _end, _res
 try:

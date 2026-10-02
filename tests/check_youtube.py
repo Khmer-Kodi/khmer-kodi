@@ -50,5 +50,17 @@ it, posts, last = run("yt_playlists", "UCAbHU5C61UNjwPV8MF5b2Bg", "neterror")
 check("network error -> notification, no crash", last.startswith("OK") and "Could not load" in last)
 check("no API key prompt anywhere in add-on", "API key" not in open(yt.__file__).read().split("# ── YouTube web API")[1])
 
+
+# Shift view (Estuary id 53) on every successful listing, with video content so Estuary offers it.
+def view(action, url, scenario="yt", skin="skin.estuary"):
+    env = dict(os.environ, ENTRY="default.py", DUMP="1", SKIN=skin)
+    out = subprocess.run([sys.executable, os.path.join(HERE, "run.py"), ADDON, action, url, scenario],
+                         capture_output=True, text=True, env=env).stdout
+    return json.loads(next(l[5:] for l in out.splitlines() if l.startswith("VIEW ")))
+for act, u, sc in (("home", "", "none"), ("yt_playlists", "UCAbHU5C61UNjwPV8MF5b2Bg", "yt"), ("index_khmerkomsan", "https://www.khmerkomsan.net/category.php?cat=on-air", "kk_listing")):
+    v = view(act, u, sc)
+    check(f"Shift view on {act}", "Container.SetViewMode(53)" in v["builtins"] and v["content"][-1:] == ["videos"])
+check("no Shift id on other skins", "Container.SetViewMode(53)" not in view("home", "", "none", "skin.other")["builtins"])
+check("no view change when a list fails", "Container.SetViewMode(53)" not in view("yt_playlists", "UCAbHU5C61UNjwPV8MF5b2Bg", "neterror")["builtins"])
 print(f"YT_PASS={sum(results)} YT_FAIL={len(results) - sum(results)}")
 sys.exit(0 if all(results) else 1)

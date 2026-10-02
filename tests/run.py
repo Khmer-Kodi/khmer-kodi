@@ -63,5 +63,7 @@ if _o.environ.get("VERBOSE") and getattr(xbmcplugin,"RESOLVED_PROPS",None): prin
 if _o.environ.get("VERBOSE"):
     import urllib.parse as up
     for l,u,f in xbmcplugin.ITEMS: q=dict(up.parse_qsl(u.split("?",1)[1])) if "?" in u else {"action":"(link)","url":u}; print("   ",l,"|",q.get("action"),"|",q.get("url","")[:95],"|",q.get("icon","")[:70])
+if _o.environ.get("DUMP"):
+    import xbmc as _x; print("VIEW",_json.dumps({"builtins":_x.BUILTINS,"content":xbmcplugin.CONTENT}))
 if _o.environ.get("DUMP"): print("ITEMS",_json.dumps(xbmcplugin.ITEMS)); print("POSTS",_json.dumps(POSTS))
 print(f"{status} | ended={len(xbmcplugin.ENDS)} | items={len(xbmcplugin.ITEMS)} {[i[0] for i in xbmcplugin.ITEMS][:4]} | resolved={xbmcplugin.RESOLVED[:1]} | dialogs={[d for d in xbmcgui.DIALOGS][:2]}")

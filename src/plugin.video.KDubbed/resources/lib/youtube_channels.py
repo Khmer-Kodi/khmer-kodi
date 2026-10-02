@@ -223,7 +223,7 @@ def _video_list(url, first_page, action, what):
     if tok:
         kit.addDir("[B]Next Page >>>[/B]", CONT + tok, action, "")
     kit.log("YouTube", f"{count} videos ({what})")
-    xbmcplugin.setContent(kit.PLUGIN_HANDLE, "episodes")
+    xbmcplugin.setContent(kit.PLUGIN_HANDLE, "videos")
     xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE)
 
 

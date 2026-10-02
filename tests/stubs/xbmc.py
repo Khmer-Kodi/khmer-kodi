@@ -1,7 +1,10 @@
 LOGDEBUG,LOGINFO,LOGWARNING,LOGERROR=0,1,2,3
 LOG=[]
 def log(m,l=1): LOG.append(m)
-def executebuiltin(*a): pass
+BUILTINS=[]
+def executebuiltin(*a): BUILTINS.append(a[0])
+def getSkinDir(): return _os.environ.get("SKIN", "skin.estuary")
+import os as _os
 class Keyboard:
     def __init__(s,*a): pass
     def setHeading(s,*a): pass
