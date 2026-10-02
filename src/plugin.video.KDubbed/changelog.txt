@@ -1,3 +1,7 @@
+1.8.17
+- New: TVB Cambodia Drama YouTube channel (playlists + latest videos),
+  played through Kodi's official YouTube add-on (offered for install if missing)
+
 1.8.16
 - New sites: KhmerAvenue.net (Rumble, up to 1080p), TheKomsan (Ckh7's new
   home; 720p MP4 / OK.ru), Movie-Khmer, Khmer Komsan (both OK.ru)

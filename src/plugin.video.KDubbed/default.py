@@ -24,6 +24,7 @@ from resources.lib import (
     khmerkomsan,
     thekomsan,
     khmeravenue_net,
+    youtube_channels,
 )
 
 from resources.lib.handlers_blogid import (
@@ -124,6 +125,12 @@ def HOME():
                 ("TheKomsan", thekomsan.BASE, thekomsan.ICON, "menu_thekomsan"),
                 ("Movie-Khmer", movie_khmer.BASE, movie_khmer.ICON, "menu_moviekhmer"),
                 ("Khmer Komsan", khmerkomsan.BASE, khmerkomsan.ICON, "menu_khmerkomsan")
+            ]
+        },
+        {
+            "title": "YouTube • TVB Cambodia Drama",
+            "categories": [
+                ("TVB Cambodia Drama (YouTube)", "youtube", "", "menu_youtube")
             ]
         }       
         #{
@@ -395,6 +402,8 @@ ROUTES = {
     "index_moviekhmer":        lambda: movie_khmer.INDEX(url),
     "episode_moviekhmer":      lambda: movie_khmer.EPISODES(url, icon),
     "menu_khmerkomsan":        lambda: khmerkomsan.MENU(),
+    "menu_youtube":            lambda: youtube_channels.MENU(),
+    "youtube_channel":         lambda: youtube_channels.CHANNEL(url),
     "index_khmerkomsan":       lambda: khmerkomsan.INDEX(url),
     "episode_khmerkomsan":     lambda: khmerkomsan.EPISODES(url, icon),
 

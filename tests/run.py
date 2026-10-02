@@ -1,6 +1,7 @@
 import sys, os, runpy, types, requests, importlib
 HERE=os.path.dirname(os.path.abspath(__file__))
 addon_dir, action, url, scenario = sys.argv[1:5]
+if scenario=="no_youtube": os.environ["YT_INSTALLED"]="0"
 sys.path[:0]=[os.path.join(HERE,"stubs"), addon_dir]; os.environ["ADDON_DIR"]=addon_dir
 PAGES = {
  "tk_eps_okru":open(os.path.join(HERE,"fixtures","tk_eps_okru.html")).read(),
@@ -42,5 +43,5 @@ except Exception as e: status=f"CRASH {type(e).__name__}: {e}"
 import os as _o
 if _o.environ.get("VERBOSE"):
     import urllib.parse as up
-    for l,u,f in xbmcplugin.ITEMS: q=dict(up.parse_qsl(u.split("?",1)[1])); print("   ",l,"|",q.get("action"),"|",q.get("url","")[:95],"|",q.get("icon","")[:70])
+    for l,u,f in xbmcplugin.ITEMS: q=dict(up.parse_qsl(u.split("?",1)[1])) if "?" in u else {"action":"(link)","url":u}; print("   ",l,"|",q.get("action"),"|",q.get("url","")[:95],"|",q.get("icon","")[:70])
 print(f"{status} | ended={len(xbmcplugin.ENDS)} | items={len(xbmcplugin.ITEMS)} {[i[0] for i in xbmcplugin.ITEMS][:4]} | resolved={xbmcplugin.RESOLVED[:1]} | dialogs={[d for d in xbmcgui.DIALOGS][:2]}")

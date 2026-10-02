@@ -8,3 +8,8 @@ class Keyboard:
     def doModal(s): pass
     def isConfirmed(s): return True
     def getText(s): return "love"
+import os as _os
+def getCondVisibility(cond):
+    if cond.startswith("System.HasAddon("):
+        return _os.environ.get("YT_INSTALLED", "1") == "1"
+    return False

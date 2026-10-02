@@ -58,6 +58,9 @@ episode_khmerkomsan|https://www.khmerkomsan.net/watch.php?vid=58d0b382a|kk_eps
 index_khmerkomsan|https://www.khmerkomsan.net/|neterror
 video_hosting|https://rumble.com/embed/v7d4mwk|urlmap
 video_hosting|https://tinyurl.com/8883scjb|urlmap
+menu_youtube|youtube|none
+youtube_channel|UCAbHU5C61UNjwPV8MF5b2Bg|none
+menu_youtube|youtube|no_youtube
 CASES
 echo "PASS=$pass FAIL=$fail"
 [ "$fail" -eq 0 ]
