@@ -77,6 +77,15 @@ youtube_channel|UCgRs-wjr54W4IjhRRQ99Arw|none
 youtube_channel|UC7cyr5kbcN7jvG7No6lZ-wQ|none
 youtube_channel|UCGB9NdhFPeFhH9SxtcTOHXw|none
 menu_youtube|youtube|no_youtube
+yt_playlists|UCAbHU5C61UNjwPV8MF5b2Bg|yt
+yt_playlists|cont:PLAYLISTS_PAGE2_TOKEN|yt
+yt_playlist|PLcrjVfrZRCdY|yt
+yt_playlist|UULONG|yt
+yt_playlist|cont:PLAYLIST_PAGE2_TOKEN|yt
+yt_videos|UCAbHU5C61UNjwPV8MF5b2Bg|yt
+yt_videos|cont:VIDEOS_PAGE2_TOKEN|yt
+yt_videos|UCAbHU5C61UNjwPV8MF5b2Bg|neterror
 CASES
+yt=$(python3 tests/check_youtube.py 2>&1); echo "$yt" | grep '^FAIL'; if echo "$yt" | grep -q 'YT_FAIL=0'; then pass=$((pass+1)); else fail=$((fail+1)); echo "FAIL check_youtube.py"; fi
 echo "PASS=$pass FAIL=$fail"
 [ "$fail" -eq 0 ]

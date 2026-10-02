@@ -1,0 +1,103 @@
+{
+ "contents": {
+  "twoColumnBrowseResultsRenderer": {
+   "tabs": [
+    {
+     "tabRenderer": {
+      "content": {
+       "sectionListRenderer": {
+        "contents": [
+         {
+          "itemSectionRenderer": {
+           "contents": [
+            {
+             "lockupViewModel": {
+              "contentId": "E4652Z6qUEA",
+              "contentType": "LOCKUP_CONTENT_TYPE_VIDEO",
+              "contentImage": {
+               "thumbnailViewModel": {
+                "image": {
+                 "sources": [
+                  {
+                   "url": "https://i.ytimg.com/vi/E4652Z6qUEA/hqdefault.jpg",
+                   "width": 480,
+                   "height": 270
+                  }
+                 ]
+                },
+                "overlays": [
+                 {
+                  "thumbnailBadgeViewModel": {
+                   "text": "43:38"
+                  }
+                 }
+                ]
+               }
+              },
+              "metadata": {
+               "lockupMetadataViewModel": {
+                "title": {
+                 "content": "[ENG SUB] TVB - Knoy Soben Bombek Kdey Atkombang 2  16/21 [A Pillow Case of Mystery 2] | 2010"
+                }
+               }
+              }
+             }
+            },
+            {
+             "lockupViewModel": {
+              "contentId": "NZApyNfgbmM",
+              "contentType": "LOCKUP_CONTENT_TYPE_VIDEO",
+              "contentImage": {
+               "thumbnailViewModel": {
+                "image": {
+                 "sources": [
+                  {
+                   "url": "https://i.ytimg.com/vi/NZApyNfgbmM/hqdefault.jpg",
+                   "width": 480,
+                   "height": 270
+                  }
+                 ]
+                },
+                "overlays": [
+                 {
+                  "thumbnailBadgeViewModel": {
+                   "text": "44:05"
+                  }
+                 }
+                ]
+               }
+              },
+              "metadata": {
+               "lockupMetadataViewModel": {
+                "title": {
+                 "content": "[ENG SUB] TVB - Knoy Soben Bombek Kdey Atkombang 2  15/21 [A Pillow Case of Mystery 2] | 2010"
+                }
+               }
+              }
+             }
+            }
+           ]
+          }
+         },
+         {
+          "continuationItemViewModel": {
+           "continuationCommand": {
+            "token": "",
+            "innertubeCommand": {
+             "continuationCommand": {
+              "token": "PLAYLIST_SIDE_TOKEN",
+              "request": "CONTINUATION_REQUEST_TYPE_BROWSE"
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

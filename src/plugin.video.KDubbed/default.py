@@ -406,6 +406,9 @@ ROUTES = {
     "menu_khmerkomsan":        lambda: khmerkomsan.MENU(),
     "menu_youtube":            lambda: youtube_channels.MENU(),
     "youtube_channel":         lambda: youtube_channels.CHANNEL(url),
+    "yt_playlists":            lambda: youtube_channels.PLAYLISTS(url),
+    "yt_playlist":             lambda: youtube_channels.PLAYLIST(url),
+    "yt_videos":               lambda: youtube_channels.VIDEOS(url),
     "index_khmerkomsan":       lambda: khmerkomsan.INDEX(url),
     "episode_khmerkomsan":     lambda: khmerkomsan.EPISODES(url, icon),
 

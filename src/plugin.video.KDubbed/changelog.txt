@@ -1,3 +1,6 @@
+1.8.25
+- YouTube fixed: playlists and videos now load without YouTube API keys (the YouTube add-on is only used to play)
+
 1.8.24
 - All YouTube channels combined under one "YouTube Channels" menu entry
 

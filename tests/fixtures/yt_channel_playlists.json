@@ -1,0 +1,187 @@
+{
+ "contents": {
+  "twoColumnBrowseResultsRenderer": {
+   "tabs": [
+    {
+     "tabRenderer": {
+      "content": {
+       "sectionListRenderer": {
+        "contents": [
+         {
+          "itemSectionRenderer": {
+           "contents": [
+            {
+             "gridRenderer": {
+              "items": [
+               {
+                "lockupViewModel": {
+                 "contentId": "PLcrjVfrZRCdY",
+                 "contentType": "LOCKUP_CONTENT_TYPE_PLAYLIST",
+                 "contentImage": {
+                  "thumbnailViewModel": {
+                   "image": {
+                    "sources": [
+                     {
+                      "url": "https://i.ytimg.com/pl_c/PLcrjVfrZRCdY/studio_square_thumbnail.jpg",
+                      "width": 480,
+                      "height": 270
+                     }
+                    ]
+                   },
+                   "overlays": [
+                    {
+                     "thumbnailBadgeViewModel": {
+                      "text": "22 videos"
+                     }
+                    }
+                   ]
+                  }
+                 },
+                 "metadata": {
+                  "lockupMetadataViewModel": {
+                   "title": {
+                    "content": "🎥NEW PREMIERE! ⚡️【 ខ្នើយសុបិនបំបែកក្ដីអាថ៌កំបាំង វគ្គ02 - A Pillow Case of Mystery 02】[ENG Sub] TVB"
+                   }
+                  }
+                 }
+                }
+               },
+               {
+                "lockupViewModel": {
+                 "contentId": "PLV88nwwTQ8yk",
+                 "contentType": "LOCKUP_CONTENT_TYPE_PLAYLIST",
+                 "contentImage": {
+                  "thumbnailViewModel": {
+                   "image": {
+                    "sources": [
+                     {
+                      "url": "https://i.ytimg.com/pl_c/PLV88nwwTQ8yk/studio_square_thumbnail.jpg",
+                      "width": 480,
+                      "height": 270
+                     }
+                    ]
+                   },
+                   "overlays": [
+                    {
+                     "thumbnailBadgeViewModel": {
+                      "text": "22 videos"
+                     }
+                    }
+                   ]
+                  }
+                 },
+                 "metadata": {
+                  "lockupMetadataViewModel": {
+                   "title": {
+                    "content": "🎥NEW PREMIERE! ⚡️【 ព្យុះភ្លៀងមន្ត្រីរជ្ជកាល - Noblesse Oblige】[ENG Sub] រឿងពេញ!!!"
+                   }
+                  }
+                 }
+                }
+               },
+               {
+                "lockupViewModel": {
+                 "contentId": "RDCLAK5uy_mixexample",
+                 "contentType": "LOCKUP_CONTENT_TYPE_PLAYLIST",
+                 "contentImage": {
+                  "thumbnailViewModel": {
+                   "image": {
+                    "sources": [
+                     {
+                      "url": "https://i.ytimg.com/vi/x/hqdefault.jpg",
+                      "width": 480,
+                      "height": 270
+                     }
+                    ]
+                   },
+                   "overlays": [
+                    {
+                     "thumbnailBadgeViewModel": {
+                      "text": ""
+                     }
+                    }
+                   ]
+                  }
+                 },
+                 "metadata": {
+                  "lockupMetadataViewModel": {
+                   "title": {
+                    "content": "Mix"
+                   }
+                  }
+                 }
+                }
+               },
+               {
+                "continuationItemRenderer": {
+                 "continuationEndpoint": {
+                  "continuationCommand": {
+                   "token": "PLAYLISTS_PAGE2_TOKEN",
+                   "request": "CONTINUATION_REQUEST_TYPE_BROWSE"
+                  }
+                 }
+                }
+               }
+              ]
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      }
+     }
+    }
+   ]
+  }
+ },
+ "header": {
+  "pageHeaderRenderer": {
+   "content": {
+    "pageHeaderViewModel": {
+     "description": {
+      "descriptionPreviewViewModel": {
+       "rendererContext": {
+        "commandContext": {
+         "onTap": {
+          "innertubeCommand": {
+           "showEngagementPanelEndpoint": {
+            "engagementPanel": {
+             "engagementPanelSectionListRenderer": {
+              "content": {
+               "sectionListRenderer": {
+                "contents": [
+                 {
+                  "itemSectionRenderer": {
+                   "contents": [
+                    {
+                     "continuationItemRenderer": {
+                      "continuationEndpoint": {
+                       "continuationCommand": {
+                        "token": "HEADER_ABOUT_TOKEN",
+                        "request": "CONTINUATION_REQUEST_TYPE_BROWSE"
+                       }
+                      }
+                     }
+                    }
+                   ]
+                  }
+                 }
+                ]
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
