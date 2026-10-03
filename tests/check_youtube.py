@@ -93,5 +93,25 @@ check("menu item re-selects Arial if user switched back", any(r["method"] == "Se
 home2 = tempfile.mkdtemp()
 v, _ = kodi("home", home2, fontset="Arial")
 check("Arial already selected -> ReloadSkin to load the new file", "ReloadSkin()" in v["builtins"])
+
+# Smooth HD: YouTube add-on switched from AV1/VP9 to H.264 once, other features untouched.
+def yt_run(action, home, feats):
+    env = dict(os.environ, ENTRY="default.py", DUMP="1", KODI_HOME=home, YT_FEATURES_JSON=json.dumps(feats))
+    out = subprocess.run([sys.executable, os.path.join(HERE, "run.py"), ADDON, action, "youtube", "none"],
+                         capture_output=True, text=True, env=env).stdout
+    return json.loads(next(l[5:] for l in out.splitlines() if l.startswith("VIEW "))), out
+DEF = "avc1,vp9,av01,hdr,hfr,3d,vr,prefer_dub,prefer_auto_dub,vorbis,mp4a,ssa,ac-3,ec-3,dts,vtt,filter".split(",")
+h3 = tempfile.mkdtemp()
+v, out = yt_run("menu_youtube", h3, DEF)
+sc = v["addon_settings"]
+check("YouTube menu switches YouTube add-on to H.264", sc and sc[0][0] == "plugin.video.youtube" and sc[0][1] == "kodion.mpd.stream.features"
+      and "av01" not in sc[0][2] and "vp9" not in sc[0][2] and sc[0][2] == [f for f in DEF if f not in ("vp9", "av01")])
+check("menu has the manual fix entry", "Fix: HD picture freezes" in out)
+v, _ = yt_run("menu_youtube", h3, DEF)
+check("not forced again after the first time", not v["addon_settings"])
+v, _ = yt_run("yt_smooth", h3, DEF)
+check("manual fix forces it", v["addon_settings"] and any("H.264" in str(d) for d in v["dialogs"]))
+v, _ = yt_run("menu_youtube", tempfile.mkdtemp(), ["vp9", "mp4a"])
+check("avc1 added if the user had removed it", v["addon_settings"] and v["addon_settings"][0][2] == ["avc1", "mp4a"])
 print(f"YT_PASS={sum(results)} YT_FAIL={len(results) - sum(results)}")
 sys.exit(0 if all(results) else 1)

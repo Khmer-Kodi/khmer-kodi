@@ -1,3 +1,6 @@
+1.8.28
+- YouTube HD: picture no longer freezes with sound only. The YouTube add-on is switched from AV1/VP9 to H.264 video, which TV boxes decode in hardware (once; also "Fix: HD picture freezes" in the YouTube Channels list)
+
 1.8.27
 - Khmer font: installed automatically (Noto Sans + Noto Sans Khmer) so Khmer titles show instead of boxes; also "Install Khmer font" at the bottom of the main menu
 - Titles: emoji and Chinese-style brackets that Kodi cannot draw are cleaned up

@@ -414,6 +414,7 @@ ROUTES = {
     "yt_playlists":            lambda: youtube_channels.PLAYLISTS(url),
     "yt_playlist":             lambda: youtube_channels.PLAYLIST(url),
     "yt_videos":               lambda: youtube_channels.VIDEOS(url),
+    "yt_smooth":               lambda: (youtube_channels.smooth_playback(force=True), xbmcplugin.endOfDirectory(PLUGIN_HANDLE, succeeded=False)),
     "index_khmerkomsan":       lambda: khmerkomsan.INDEX(url),
     "episode_khmerkomsan":     lambda: khmerkomsan.EPISODES(url, icon),
 

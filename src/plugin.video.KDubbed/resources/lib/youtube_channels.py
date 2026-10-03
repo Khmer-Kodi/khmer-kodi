@@ -12,7 +12,7 @@
 #  To add a channel: append (name, channel_id) to CHANNELS. The single
 #  "YouTube Channels" menu entry lists them all automatically.
 # ────────────────────────────────────────────────
-import re, json, requests, xbmc, xbmcgui, xbmcplugin
+import os, re, json, requests, xbmc, xbmcaddon, xbmcgui, xbmcplugin, xbmcvfs
 from resources.lib import sitekit as kit
 from resources.lib.fonttext import clean_label
 
@@ -172,13 +172,71 @@ def _fail(what, err):
 
 
 # ── Menus ────────────────────────────────────────
+# ── Smooth HD playback ───────────────────────────
+# The YouTube add-on prefers AV1 / VP9 video by default. Many TV boxes and sticks can't
+# decode those in hardware at 1080p, so the sound plays but the picture freezes.
+# H.264 (avc1) is decoded in hardware almost everywhere and YouTube offers it up to 1080p.
+# So we switch off av01 and vp9 in the YouTube add-on's "stream features" setting
+# (kodion.mpd.stream.features), once; everything else in that setting is left as it was.
+YT_FEATURES = "kodion.mpd.stream.features"
+YT_DEFAULT_FEATURES = ("avc1,vp9,av01,hdr,hfr,3d,vr,prefer_dub,prefer_auto_dub,vorbis,mp4a,"
+                       "ssa,ac-3,ec-3,dts,vtt,filter")
+HEAVY_CODECS = ("av01", "vp9")
+CODEC_FIX_VERSION = "avc1-1"
+
+
+def _marker():
+    profile = xbmcvfs.translatePath(xbmcaddon.Addon().getAddonInfo("profile"))
+    return os.path.join(profile, "youtube_codecs.done")
+
+
+def smooth_playback(force=False):
+    """Make the YouTube add-on use H.264 video. Automatic once; force=True from the menu entry."""
+    marker = _marker()
+    try:
+        if not force and os.path.exists(marker) and open(marker).read().strip() == CODEC_FIX_VERSION:
+            return False      # done before; respect any later change the user made
+        yt = xbmcaddon.Addon(YOUTUBE_ADDON)
+        try:
+            settings = yt.getSettings()
+            feats = list(settings.getStringList(YT_FEATURES))
+        except Exception:
+            settings, feats = None, [f for f in (yt.getSetting(YT_FEATURES) or "").split(",") if f]
+        if not feats:
+            feats = YT_DEFAULT_FEATURES.split(",")
+        new = [f for f in feats if f not in HEAVY_CODECS]
+        if "avc1" not in new:
+            new.insert(0, "avc1")
+        changed = new != feats
+        if changed:
+            if settings is not None:
+                settings.setStringList(YT_FEATURES, new)
+            else:
+                yt.setSetting(YT_FEATURES, ",".join(new))
+            kit.log("YouTube", f"stream features {feats} -> {new}")
+        os.makedirs(os.path.dirname(marker), exist_ok=True)
+        with open(marker, "w") as f:
+            f.write(CODEC_FIX_VERSION)
+        if changed or force:
+            xbmcgui.Dialog().notification("YouTube", "HD videos set to H.264 for smooth playback",
+                                          xbmcgui.NOTIFICATION_INFO, 4000)
+        return changed
+    except Exception as e:
+        kit.log("YouTube", f"Could not adjust YouTube playback settings: {e}", xbmc.LOGWARNING)
+        if force:
+            xbmcgui.Dialog().ok("YouTube", f"Could not change the YouTube add-on settings:\n{e}")
+        return False
+
+
 def MENU():
     """All channels."""
     if not _youtube_ready():
         xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE, succeeded=False)
         return
+    smooth_playback()
     for name, cid in CHANNELS:
         kit.addDir(name, cid, "youtube_channel", "")
+    kit.addDir("[COLOR grey]Fix: HD picture freezes (sound only)[/COLOR]", "", "yt_smooth", "")
     xbmcplugin.endOfDirectory(kit.PLUGIN_HANDLE)
 
 
